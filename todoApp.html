@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="todoApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="todo.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="todo.css">
+</head>
+<body>
+
+<div id="body">
+<div ng-controller="TodoListController as todoList">
+  <h2>{{todoList.getName()}}'s List</h2>
+<span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+[<a href="" ng-click="todoList.archive()">Delete List</a>]
+<br><br>
+<ul class="unstyled">
+<li ng-repeat="todo in todoList.todos">
+
+<span class="done-{{todo.done}}">{{todo.text}} : Due {{todo.due.toDateString()}} : {{todo.daysUntil}} days until due! </span>
+<input type="checkbox" ng-model="todo.done">
+</li>
+</ul>
+<br>
+<form ng-submit="todoList.addTodo()">
+<input type="text" ng-model="todoList.todoText" placeholder="add new todo here">
+<input type="date" ng-model="todoList.todoDue" placeholder="enter due date (YY, MM, DD)">
+<input class="btn-primary" type="submit" value="add">
+</form>
+</div>
+</div>
+</body>

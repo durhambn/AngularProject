@@ -1,0 +1,33 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+li{
+    list-style: none;
+    height: auto;
+    width: 500px;
+    border: 1px solid black;
+
+    padding: 2px;
+
+}
+ul{
+  display: table;
+  margin: 0 auto;
+
+
+}
+#body{
+  margin: 10px;
+  text-align: center;
+  list-style-position: inside;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+
+}
+body{
+  background-color: teal;
+}
